@@ -38,6 +38,7 @@ From Corporate Wellness (including Employee Assistance Programs (EAP)) to soluti
     <link rel="canonical" href="index.html">
     <meta property="og:url" content="index.html">
   </head>
+
   <body data-home-page="Gleebo-Web-Landing.html" data-home-page-title="Gleebo Web Landing" class="u-body"><header class="u-clearfix u-header u-header" id="sec-4e8f"><nav class="u-dropdown-icon u-menu u-menu-dropdown u-offcanvas u-menu-1">
         <div class="menu-collapse u-custom-font" style="font-size: 1.25rem; letter-spacing: 0px; font-family: Manrope-Regular;">
           <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
@@ -254,6 +255,19 @@ From Corporate Wellness (including Employee Assistance Programs (EAP)) to soluti
                       <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
+                    
+
+					<script>
+					  const scriptURL = 'https://script.google.com/macros/s/AKfycby6URFfQFSsXcqiUIM3Oi5YkBRnc22mKOeIf97H1vVtCnC9vUERUs2IG71y2yLQHXPBjA/exec'
+					  const form = document.forms['form']
+
+					  form.addEventListener('submit', e => {
+					    e.preventDefault()
+					    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+					      .then(response => console.log('Success!', response))
+					      .catch(error => console.error('Error!', error.message))
+					  })
+					</script>
                   </div>
                 </div>
               </div>
