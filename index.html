@@ -260,6 +260,18 @@ From Corporate Wellness (including Employee Assistance Programs (EAP)) to soluti
                       <div class="u-form-send-error u-form-send-message">Thank you! Your message has been sent.</div>
                       <input type="hidden" value="" name="recaptchaResponse">
                     </form>
+                    <script>
+                      const scriptURL = 'https://script.google.com/macros/s/AKfycby6URFfQFSsXcqiUIM3Oi5YkBRnc22mKOeIf97H1vVtCnC9vUERUs2IG71y2yLQHXPBjA/exec'
+                      const form = document.forms['form']
+
+                      form.addEventListener('submit', e => {
+                        e.preventDefault()
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                          .then(response => console.log('Success!', response))
+                          .catch(error => console.error('Error!', error.message))
+                      })
+                    </script>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -294,16 +306,5 @@ From Corporate Wellness (including Employee Assistance Programs (EAP)) to soluti
           </a>
         </div>
       </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/html5-template" target="_blank">
-        <span>HTML5 Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Design Software</span>
-      </a>. 
-    </section>
   </body>
 </html>
